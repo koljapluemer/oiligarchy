@@ -1,0 +1,491 @@
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+  body {
+      background-color: #3e94ec;
+          font-family: "Roboto", helvetica, arial, sans-serif;
+              font-size: 16px;
+                  font-weight: 400;
+                      text-rendering: optimizeLegibility;
+  }
+
+  div.table-title {
+       display: block;
+           margin: auto;
+               max-width: 80vw;
+                   padding:5px;
+                       width: 100%;
+  }
+
+  .table-title h3 {
+       color: #fafafa;
+            font-size: 30px;
+                 font-weight: 400;
+                      font-style:normal;
+                           font-family: "Roboto", helvetica, arial, sans-serif;
+                                text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+                                     text-transform:uppercase;
+  }
+
+
+  /*** Table Styles **/
+
+  .table-fill {
+      background: white;
+          border-radius:3px;
+              border-collapse: collapse;
+                  height: 320px;
+                      margin: auto;
+                          max-width: 80vw;
+                              padding:5px;
+                                  width: 100%;
+                                      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                                          animation: float 5s infinite;
+  }
+   
+  th {
+      color:#D5DDE5;;
+          background:#1b1e24;
+              border-bottom:4px solid #9ea7af;
+                  border-right: 1px solid #343a45;
+                      font-size:23px;
+                          font-weight: 100;
+                              padding:24px;
+                                  text-align:left;
+                                      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+                                          vertical-align: top;
+  }
+
+  th:first-child {
+      border-top-left-radius:3px;
+  }
+   
+  th:last-child {
+      border-top-right-radius:3px;
+          border-right:none;
+  }
+    
+  tr {
+      border-top: 1px solid #C1C3D1;
+          border-bottom-: 1px solid #C1C3D1;
+              color:#666B85;
+                  font-size:16px;
+                      font-weight:normal;
+                          text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+  }
+   
+  tr:hover td {
+      background:#eee;
+          border-top: 1px solid #22262e;
+  }
+   
+  tr:first-child {
+      border-top:none;
+  }
+
+  tr:last-child {
+      border-bottom:none;
+  }
+   
+  tr:nth-child(odd) td {
+      background:#EBEBEB;
+  }
+   
+  tr:nth-child(odd):hover td {
+      background:#eee;
+  }
+
+  tr:last-child td:first-child {
+      border-bottom-left-radius:3px;
+  }
+   
+  tr:last-child td:last-child {
+      border-bottom-right-radius:3px;
+  }
+   
+  td {
+      background:#FFFFFF;
+          padding:20px;
+              text-align:left;
+                  vertical-align:top;
+                      font-weight:300;
+                          font-size:18px;
+                              text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+                                  border-right: 1px solid #C1C3D1;
+  }
+
+  td:last-child {
+      border-right: 0px;
+  }
+
+  th.text-left {
+      text-align: left;
+  }
+
+  th.text-center {
+      text-align: center;
+  }
+
+  th.text-right {
+      text-align: right;
+  }
+
+  td.text-left {
+      text-align: left;
+  }
+
+  td.text-center {
+      text-align: center;
+  }
+
+  td.text-right {
+      text-align: right;
+  }
+
+	textarea {
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Oiligarchy QR</title>
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+</head>
+
+<body>
+<div class="table-title">
+<h3>Oiligarchy Poster Data</h3>
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">File</th>
+<th class="text-left">Description</th>
+<th class="text-left">Content</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+	<td class="text-left">Oiligarchy</td>
+	<td class="text-left">The analysed Flash game from the original site</td>
+  <td class="text-left"><a href="http://molleindustria.org/en/oiligarchy/">http://molleindustria.org/en/oiligarchy/</a></td>
+	
+</tr>
+<tr>
+	<td class="text-left">Image Gallery</td>
+	<td class="text-left">Library of all screenshots used for color analysis</td>
+  <td class="text-left"><a href="https://imgur.com/a/TcmQ2F6">Imgur</a></td>
+</tr>
+
+<tr>
+	<td class="text-left">Python Miniscript</td>
+	<td class="text-left">Analysing polarity and subjectivity with the TextBlob library</td>
+  <td class="text-left">
+  <xmp>
+from textblob import TextBlob
+x = ''' ''' 
+# Add the text in question between the triple paranthesis. 
+# Omitted for readability. 
+x = TextBlob(x)
+
+for sentence in x.sentences:
+  print(sentence.sentiment.polarity)
+
+# Redo for sentences itself and subjectivity
+    </xmp>
+    </td>
+</tr>
+
+
+<tr>
+	<td class="text-left">Raw Text</td>
+	<td class="text-left">Results from running the gametext through the script. Might be used to reconstruct the manually noted gametext, too.</td>
+  <td class="text-left">
+    <textarea>
+      
+     0.8,0.4,to,dismantle,train,tracks,to,free,passengers,from,the,tyranny,of,rails,and,put,them,in,free,froms,of,transportation.,,,,,,,
+0,0,OPEC,founded.,,,,,,,,,,,,,,,,,,,,,,,,,
+0.4,0.1,the,petroleum,exporting,countries,are,establishing,an,alliance,to,coordinate,policies,and,protect,the,profitability,of,their,natural,resources.,,,,,,,,
+0.75,0.375,The,oil,rich,corner,of,Alaska,is,protected,wildlife,refuge.,,,,,,,,,,,,,,,,,
+0.3571428571,0,there's,a,lot,of,space,around,the,world,for,noisy,birds,and,stinky,caribous,a,well,oiled,government,should,understand,this,simple,fact,and,allow,us,to.
+0,0,An,eye,on,the,courtyard.,,,,,,,,,,,,,,,,,,,,,,
+0.4466666667,-0.1133333333,infiltrate,Venezuela,secret,services,and,establish,connections,with,military,high,officers.,,,,,,,,,,,,,,,,
+0,0,The,coup.,,,,,,,,,,,,,,,,,,,,,,,,,
+0.125,-0.125,promote,a,coup,against,the,Venezuela,democratic,government,and,create,a,friendlier,environment,for,the,foreign,investors.,,,,,,,,,,
+0.4545454545,0.1363636364,New,jobs,for,caribous,act.,,,,,,,,,,,,,,,,,,,,,,
+0.6,-0.4,To,create,job,opportunities,for,the,poor,animals,in,the,arctic,national,wildlife,refuge,by,establishing,an,oil,extraction,industry.,,,,,,,
+0,0,Iraq,invades,Kuwait.,,,,,,,,,,,,,,,,,,,,,,,,
+0.4,0.3,More,than,10000,iraqi,soldiers,backed,up,by,700,tanks,invaded,the,gulf,state,of,Kuwait,in,the,early,hours,of,this,morning.,,,,
+0,0,Retreat!,,,,,,,,,,,,,,,,,,,,,,,,,,
+0.1,-0.1,The,iraq,invasion,is,a,military,defeat.,,,,,,,,,,,,,,,,,,,,
+0.3,-0.5,The,regime,change,miserably,failed.,,,,,,,,,,,,,,,,,,,,,,
+0,0,Operation,unlimited,divine,justice.,,,,,,,,,,,,,,,,,,,,,,,
+0.3666666667,0.2166666667,Our,interests,in,middle,east,are,still,strong.,,,,,,,,,,,,,,,,,,,
+0,0,Another,war,may,be,unpopular,but,we,have,to,take,back,iraq.,,,,,,,,,,,,,,,
+0,0,We,drink,your,milkshake,act.,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,pressure,venezuelan,government,to,reduce,roayalties,and,block,its,influence,on,the,region.,,,,,,,,,,,,,
+0,0,Texas,oil,produtction,peaked?,,,,,,,,,,,,,,,,,,,,,,,
+1,-0.7,The,extraction,of,crude,in,the,state,will,start,to,decline,from,now,on.,,,,,,,,,,,,,
+0.125,-0.125,Oil,producer,must,find,untapped,national,and,foreign,resources.,,,,,,,,,,,,,,,,,,
+0,0,The,greenhouse,effect.,,,,,,,,,,,,,,,,,,,,,,,,
+0.7238095238,-0.073015873,Scientists,found,that,certain,gasses,released,in,the,atmosphere,are,likely,to,produce,dramatic,climate,changes.,,,,,,,,,,,
+0,0,The,earth,is,warming.,,,,,,,,,,,,,,,,,,,,,,,
+0.275,0.1,Environmentalist,claim,that,co2,emissions,are,responsible,for,global,warming,and,ask,for,regulations.,,,,,,,,,,,,,
+0.4545454545,0.1363636364,A,new,pearl,harbor.,,,,,,,,,,,,,,,,,,,,,,,
+0.4772727273,0.0681818182,For,a,new,american,century,we,need,a,new,pearl,harbor,to,awake,the,sleeping,giant.,,,,,,,,,,,
+0.7,0.33125,Provoke,and,facilitate,a,major,and,spectacular,terrorist,attack,in,the,homeland.,,,,,,,,,,,,,,,
+0,0,Sweep,under,the,carpet,act.,,,,,,,,,,,,,,,,,,,,,,
+0.3462962963,0.0481481481,To,calm,down,global,warming,conspiracy,theorist,by,marketing,carbon,sequestration,as,solution,to,climate,change.,,,,,,,,,,,
+0,0,Drill,baby,drill.,,,,,,,,,,,,,,,,,,,,,,,,
+0.3272727273,0.1681818182,To,create,incentives,for,tapping,new,oil,sources,by,assuming,the,legal,risks,of,exploration,and,development,in,a,company's,stead.,,,,,,
+0.8,0.4,The,exploration,activities,will,be,free,from,now,on.,,,,,,,,,,,,,,,,,,
+0.25,0,The,equal,flights,act.,,,,,,,,,,,,,,,,,,,,,,,
+0.75,0.2,To,enable,subsidies,for,airports,and,planes,that,will,ensure,that,even,wage,poor,women,and,minorities,can,afford,to,fly,once,in,a,while.,,
+0,0,Create,a,monster.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Internal,dissent,is,rising?,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Create,a,long-bearded,muslim,villain,to,scare,the,citizen,and,reinvigorate,unity.,,,,,,,,,,,,,,,
+0.5714285714,0.3571428571,Todays,special.,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Raid,the,tribe.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Ogoni,may,be,troublemakers.,,,,,,,,,,,,,,,,,,,,,,,
+1,1,A,delicious,raid,is,the,solution.,,,,,,,,,,,,,,,,,,,,,
+0,0,Ignore,pollution.,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Reduce,maintenance,costs,by,ignoring,environmental,standards.,,,,,,,,,,,,,,,,,,,,
+0.5714285714,0.3571428571,Todays,special.,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Kill,the,activists.,,,,,,,,,,,,,,,,,,,,,,,,
+0.5,0.5,Too,many,demonstrations?,,,,,,,,,,,,,,,,,,,,,,,,
+0.0666666667,0,Eradicate,the,problem,with,a,public,execution.,,,,,,,,,,,,,,,,,,,,
+0.5714285714,0.3571428571,Special,royalties.,,,,,,,,,,,,,,,,,,,,,,,,,
+0.55,-0.35,Why,giving,all,that,money,to,the,government,when,you,can,corrupt,just,few,functionaries?,,,,,,,,,,,,
+0,0,Climate,crisis.,,,,,,,,,,,,,,,,,,,,,,,,,
+0.125,0,"According to a recent poll, 80% of citizens mention global warming as a maximum priority issue.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,"Oil, blood and guns.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0.5,-0.2666666667,"After years of pacific demonstration and violent repressions, niger delta people are threatening direct military actions.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0.5714285714,0.3571428571,Todays,special.,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Defend,wells.,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Bribe,and,deploy,nigerian,soldiers,on,your,wells.,,,,,,,,,,,,,,,,,,,
+0.5714285714,0.3571428571,Todays,special.,,,,,,,,,,,,,,,,,,,,,,,,,
+1,-0.5,Corrupt,the,gang.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Let,the,niger,delta,rebels,steal,some,oil,to,avoid,troubles,for,a,year.,,,,,,,,,,,,,
+0,0,The,suv,craze.,,,,,,,,,,,,,,,,,,,,,,,,
+0.4348484848,0.1954545455,Despite,emerging,energy,and,environmental,issues,gas,guzzling,sport,utility,vehicles,are,becoming,the,symbol,of,the,new,middle,class.,,,,,,,
+0.5,0.25,Bigger,is,better,act.,,,,,,,,,,,,,,,,,,,,,,,
+0.1,0,To,cut,taxes,on,the,purchase,of,SUV,and,promote,big,cars,as,the,optimal,vehicle,for,surviving,the,asphalt,jungle.,,,,,,
+0.4333333333,-0.1666666667,Black,tide.,,,,,,,,,,,,,,,,,,,,,,,,,
+0.5,0.0625,A,major,oil,spill,occurred,in,alaska.,,,,,,,,,,,,,,,,,,,,
+0.75,-0.25,It,might,be,the,most,devastating,man,made,environmental,disaster,ever.,,,,,,,,,,,,,,,,
+0,0,Made,in,china.,,,,,,,,,,,,,,,,,,,,,,,,
+1,0.1,Your,goods,are,coming,from,far,away.,,,,,,,,,,,,,,,,,,,,
+0.475,0.175,East,asia,is,becoming,the,center,of,world,manufacturing.,,,,,,,,,,,,,,,,,,
+0,0,Climate,catastrophe.,,,,,,,,,,,,,,,,,,,,,,,,,
+0.5333333333,-0.1666666667,Climate,change,related,disasters,are,seriously,damaging,the,world,economy.,,,,,,,,,,,,,,,,,
+0,0,World,oil,peaked?,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Global,oil,production,will,decline,soon.,,,,,,,,,,,,,,,,,,,,,
+0,0,The,rising,oil,prices,may,have,catastrophic,effects,on,western,society.,,,,,,,,,,,,,,,,
+0.9,0.7,Fair,taxes,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,repeal,taxes,breaks,and,subsidies,that,privilege,the,oil,industry.,,,,,,,,,,,,,,,,
+0,0,Railways,plan,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,improve,and,optimize,the,railroad,system,and,make,freight,trains,a,convenient,alternative,to,motorized,transportation.,,,,,,,,,,
+0,0,Bike,lanes,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,implement,a,plan,of,off-road,and,on,road,segregated,bike,paths,in,every,city,to,promote,utility,cycling.,,,,,,,,
+0.4,-0.3,Slow,the,insanity.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,reduce,gas,consumption,by,reducing,speed,limit,on,roads.,,,,,,,,,,,,,,,,,
+0,0,Hybrid,car,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0.0666666667,-0.1666666667,To,promote,slightly,less,oil,dependent,mobility,by,subsidizing,the,production,of,hybrid,electric,vehicles.,,,,,,,,,,,,
+0.4545454545,0.1363636364,New,mobility,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0.3033333333,0.08,"To implement a energy savvy public transportation system involving carpooling, high occupancy vehicle incentives, pedestrianization or incentive parking.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Carbon,tax,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0.375,-0.125,To,fight,climate,change,by,introducing,a,tax,on,emission,of,carbon,dioxide,and,other,greenhouse,gases.,,,,,,,,,,
+0,0,Urban,mass,transit,act.,,,,,,,,,,,,,,,,,,,,,,,
+0.0666666667,0,To,restore,and,improve,public,mass,transit,in,cities,and,suburbs.,,,,,,,,,,,,,,,,
+0.3357142857,0.1785714286,Big,car,special,tax.,,,,,,,,,,,,,,,,,,,,,,,
+0.32,0.08,To,introduce,a,tax,for,high,powered,cars,in,order,to,invert,the,trend,that,lead,the,market,toward,big,gas,guzzling,vehicles.,,,,
+0,0,Electric,car,pilot,program.,,,,,,,,,,,,,,,,,,,,,,,
+0.4,0,To,analyze,the,costs,and,benefits,of,mass,produced,electric,cars,for,individual,mobility.,,,,,,,,,,,,,
+0.5,0.5,Train,is,better,act.,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,promote,railroad,transit,by,reducing,the,tax,on,tickets.,,,,,,,,,,,,,,,,,
+0,0,Back,to,the,city,act.,,,,,,,,,,,,,,,,,,,,,,
+0.27,0.08,"To implement policies aimed at inverting the suburbanization trend, promoting high density settlements and redesigning urban sprawl.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0.7,0.3666666667,Clean,plants,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,increase,standards,in,oil,production,in,order,to,prevent,spills,and,reduce,environmental,costs.,,,,,,,,,,,,
+0.5,0.05,General,fuel,efficiency.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,impose,an,incremental,mile-per-gallon,fuel-efficiency,standard,for,every,vehicle.,,,,,,,,,,,,,,,,,
+0,0,Energy,awareness,campaign.,,,,,,,,,,,,,,,,,,,,,,,,
+0.35625,0.03125,To,promote,energy,conservation,on,an,individual,level,by,a,broad,communication,campaign.,,,,,,,,,,,,,,
+0,0,Livable,cities,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,limit,car,circulation,in,city,centers,that,causes,congestion,and,health,problems.,,,,,,,,,,,,,,
+0,0,Alternative,energy,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,promote,the,research,and,development,of,alternative,energy,technologies.,,,,,,,,,,,,,,,,,
+0,0,Energy,efficient,building,act.,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,promote,the,construction,of,energy,efficient,buildings,for,civil,use.,,,,,,,,,,,,,,,,
+0,0,Corporate,fuel,efficiency,act.,,,,,,,,,,,,,,,,,,,,,,,
+0,0,"To impose an incremental mile per gallon fuel-efficiency standard for trucks, vans, and SUVs.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Bike,sharing,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0.6,0.23125,To,implement,a,cheap,bike,sharing,system,in,every,major,city,in,order,to,reduce,pollution,and,traffic,congestion.,,,,,,,,
+0,0,Sustainable,factories,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0.3,0,"To introduce tax breaks for companies that operate in energy efficient, low emission facilities.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Gas,tax,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0.3,0,To,increase,sale,taxes,on,gas,and,invert,the,tendency,to,artificially,low,fuel,prices.,,,,,,,,,,,,
+0,0,Fuel,emergency,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,temporarily,reduce,consumption,by,rationing,gas,sales.,,,,,,,,,,,,,,,,,,,
+0,0,SUV,ban,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0.5,0.0625,To,ban,sport,utility,vehicles,in,major,cities.,,,,,,,,,,,,,,,,,,,
+0,0,Plane,regulation,act.,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,"To reduce fuel consumption in aviation by imposing taxes, optimizing lines and restricting plane sizes and flight frequency.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0,0,Electric,car,program,act.,,,,,,,,,,,,,,,,,,,,,,,
+0,0,To,promote,sustainable,mobility,by,subsidizing,the,production,of,electric,cars.,,,,,,,,,,,,,,,,
+0.5,0.4,Enjoy,your,retirement.,,,,,,,,,,,,,,,,,,,,,,,,
+0.5,0.5,So,many,things,are,changed,since,you,went,into,this,business.,,,,,,,,,,,,,,,,
+0.5,-0.25,It,seems,that,oil,is,no,more,the,blood,of,industrialization.,,,,,,,,,,,,,,,,
+0.1333333333,0.05,"People are living a sober life, using public transportations and moving into sustainable and densely populated communities.",,,,,,,,,,,,,,,,,,,,,,,,,,
+0.2­,0.1,It,sounds,so,nonsensical,to,you,but,maybe,you're,just,too,old,to,understand.,,,,,,,,,,,,,
+
+    </textarea>
+  </td>
+
+
+</tr>
+
+<tr>
+	<td class="text-left">R Script</td>
+	<td class="text-left">Using the data above to generate the text-analysis-figure on the poster</td>
+  <td class="text-left">
+    <xmp>
+library(tidyverse)
+library(devtools)
+library(hrbrthemes) #installation: devtools::install_github("hrbrmstr/hrbrthemes")
+
+x <- read.csv("ps.csv", header=FALSE) # Three rows of python generated values (subj., pol., sentence)
+x <- x %>% mutate(id = row_number()) # Add index column
+
+x$V1 = as.numeric(levels(x$V1))[x$V1] # Bugfixing factor interpreted col
+x$V1[198] <- .2
+
+
+ggplot(data=x) +
+  geom_point(mapping=aes(x=id, y=V2), fill="blue", alpha=.3) +
+  geom_smooth(mapping=aes(x=id, y=V2)) +
+  geom_point(mapping=aes(x=id, y=V1), fill="#003E2F", alpha=.3, shape=17) +
+  geom_smooth(mapping=aes(x=id, y=V1), color="#003E2F") +
+  ggtitle("Lowess smoothed subjectivity and polarity of gametext over progression in the game\n") +
+  xlab("\nSentence number") +
+  ylab("Value\n") +
+  theme_classic()
+
+</xmp>
+</td>
+</tr>
+
+
+
+<tr>
+	<td class="text-left">R Script</td>
+	<td class="text-left">The demonstrated color analysis of two before and after screenshots</td>
+  <td class="text-left">
+	<xmp>
+library(png)
+library(grid)
+library(gridExtra)
+library(treemap)
+
+i <- readPNG("stage2Before.png")
+
+dfi = data.frame(
+                    red = matrix(i[,,1], ncol=1),
+                    green = matrix(i[,,2], ncol=1),
+                    blue = matrix(i[,,3], ncol=1)
+                  )
+
+
+j <- readPNG("stage2After.png")
+
+dfj = data.frame(
+                    red = matrix(j[,,1], ncol=1),
+                    green = matrix(j[,,2], ncol=1),
+                    blue = matrix(j[,,3], ncol=1)
+                  )
+
+ti <- as.data.frame(table(rgb(dfi$red, dfi$green, dfi$blue)))
+tj <- as.data.frame(table(rgb(dfj$red, dfj$green, dfj$blue)))
+k <- merge(ti, tj, by="Var1")
+
+k$dif <- k$Freq.y - k$Freq.x
+l <- k[k$dif > 0,]
+
+png("col2P.png")
+treemap(
+                 l,
+                 index=c("Var1", "dif"),
+                 vSize="dif",
+                 vColor="Var1",
+                 type="color",
+                 fontsize.labels=(0),
+                 border.lwds=(0)
+                 )
+dev.off()
+
+
+m <- k[k$dif < 0,]
+m$dif <- m$dif * -1
+
+png("col2M.png")
+treemap(
+                 m,
+                 index=c("Var1", "dif"),
+                 vSize="dif",
+                 vColor="Var1",
+                 type="color",
+                 fontsize.labels=(0),
+                 border.lwds=(0)
+                 )
+dev.off()
+
+c <- table(rgb(dfi$red,dfi$green,dfi$blue))
+c <- as.data.frame(c)
+c[,2] <- as.numeric(as.character(c[,2]))
+
+png("col2B.png")
+treemap(
+                 c,
+                 index=c("Var1"),
+                 vSize="Freq",
+                 vColor="Var1",
+                 type="color",
+                 fontsize.labels=(0),
+                 border.lwds=(0)
+                 )
+dev.off()
+
+c <- table(rgb(dfj$red,dfj$green,dfj$blue))
+c <- as.data.frame(c)
+c[,2] <- as.numeric(as.character(c[,2]))
+
+png("col2A.png")
+treemap(
+                 c,
+                 index=c("Var1"),
+                 vSize="Freq",
+                 vColor="Var1",
+                 type="color",
+                 fontsize.labels=(0),
+                 border.lwds=(0)
+                 )
+dev.off()
+
+</xmp>
+</td>
+</tr>	
+
+
+
+</tbody>
+</table>
+  
+
+</body>
