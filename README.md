@@ -7,3 +7,7 @@ See the poster here:
 
 For raw data and code please refer to this table:
 [Table](https://blackbrokkoli.github.io/oiligarchy/)
+
+## Todo
+
+* find a better way to showcase finished poster
